@@ -1,0 +1,21 @@
+{
+    "name": "joshbrw/calendar-module",
+    "type": "laravel-module",
+    "version": "0.0.1",
+
+    "description": "",
+    "extra": {
+        "module-dir": "Calendar"
+    },
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Calendar\\": ""
+        }
+    }
+}
