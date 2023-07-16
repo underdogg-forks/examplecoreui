@@ -1,11 +1,9 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Modules\Core\Providers;
 
-use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Factory;
 
 class CoreServiceProvider extends ServiceProvider
 {
@@ -21,7 +19,7 @@ class CoreServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(): void
+    public function boot()
     {
         $this->registerTranslations();
         $this->registerConfig();
@@ -34,7 +32,7 @@ class CoreServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register(): void
+    public function register()
     {
         //
     }
@@ -44,14 +42,13 @@ class CoreServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerConfig(): void
+    protected function registerConfig()
     {
         $this->publishes([
-            __DIR__ . '/../Config/config.php' => config_path('core.php'),
+            __DIR__.'/../Config/config.php' => config_path('core.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__ . '/../Config/config.php',
-            'core'
+            __DIR__.'/../Config/config.php', 'core'
         );
     }
 
@@ -60,14 +57,14 @@ class CoreServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function registerViews(): void
+    public function registerViews()
     {
         $viewPath = resource_path('views/modules/core');
 
-        $sourcePath = __DIR__ . '/../Resources/views';
+        $sourcePath = __DIR__.'/../Resources/views';
 
         $this->publishes([
-            $sourcePath => $viewPath,
+            $sourcePath => $viewPath
         ]);
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
@@ -80,23 +77,22 @@ class CoreServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function registerTranslations(): void
+    public function registerTranslations()
     {
         $langPath = resource_path('lang/modules/core');
 
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'core');
         } else {
-            $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'core');
+            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'core');
         }
     }
 
     /**
      * Register an additional directory of factories.
-     *
      * @source https://github.com/sebastiaanluca/laravel-resource-flow/blob/develop/src/Modules/ModuleServiceProvider.php#L66
      */
-    public function registerFactories(): void
+    public function registerFactories()
     {
         if (! app()->environment('production')) {
             app(Factory::class)->load(__DIR__ . '/Database/factories');

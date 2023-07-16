@@ -1,11 +1,9 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Modules\Core\Database\Seeders;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 class CoreDatabaseSeeder extends Seeder
 {
@@ -14,7 +12,7 @@ class CoreDatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run(): void
+    public function run()
     {
         Model::unguard();
 
