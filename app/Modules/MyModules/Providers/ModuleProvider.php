@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Modules\MyModules\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -9,8 +11,7 @@ class ModuleProvider extends ServiceProvider
 {
     use BootModule;
 
-    public function register()
+    public function register(): void
     {
-
     }
 }

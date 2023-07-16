@@ -1,4 +1,8 @@
-<?php namespace Modules\Calendar\Providers;
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Calendar\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -9,13 +13,13 @@ class ModuleProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        /*Load views*/
+        // Load views
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'calendar');
-        /*Load translations*/
+        // Load translations
         $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'calendar');
-        /*Load migrations*/
+        // Load migrations
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         /*
@@ -40,7 +44,7 @@ class ModuleProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         //Load helpers
         $this->loadHelpers();
@@ -50,7 +54,7 @@ class ModuleProvider extends ServiceProvider
         $this->app->register(BootstrapModuleServiceProvider::class);
     }
 
-    protected function loadHelpers()
+    protected function loadHelpers(): void
     {
         $helpers = $this->app['files']->glob(__DIR__ . '/../../helpers/*.php');
         foreach ($helpers as $helper) {

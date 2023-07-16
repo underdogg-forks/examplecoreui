@@ -1,0 +1,26 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    level: 0
+
+    paths:
+        - app
+        - config
+        - tests
+        - database
+        - routes
+
+    ignoreErrors:
+        # Unexplainable false positives
+        - '#Variable \$factory might not be defined.#'
+
+    checkMissingIterableValueType: false
+    checkUnionTypes: false
+
+    universalObjectCratesClasses:
+        - App\Presenters\BasePresenter
+
+        # This can be removed once we start annotating our models, otherwise properties and methods can not be resolved properly
+        - Illuminate\Database\Eloquent\Model
+

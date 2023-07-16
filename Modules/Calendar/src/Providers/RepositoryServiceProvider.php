@@ -1,4 +1,8 @@
-<?php namespace Modules\Calendar\Providers;
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Calendar\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,9 +15,8 @@ class RepositoryServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-
     }
 
     /**
@@ -21,8 +24,7 @@ class RepositoryServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-
     }
 }

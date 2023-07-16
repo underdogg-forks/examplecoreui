@@ -1,7 +1,8 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Alias Blacklist
@@ -14,5 +15,4 @@ return [
     */
 
     'dont_alias' => [],
-
 ];

@@ -1,8 +1,10 @@
-<?php namespace Modules\Calendar\Providers;
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Calendar\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Schema;
-use Illuminate\Database\Schema\Blueprint;
 
 class InstallModuleServiceProvider extends ServiceProvider
 {
@@ -15,9 +17,9 @@ class InstallModuleServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        app()->booted(function () {
+        app()->booted(function (): void {
             $this->booted();
         });
     }
@@ -27,19 +29,18 @@ class InstallModuleServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-
     }
 
-    private function booted()
+    private function booted(): void
     {
         //Resolve your module dependency
 
         $this->createSchema();
     }
 
-    private function createSchema()
+    private function createSchema(): void
     {
         \Artisan::call('module:migrate', ['alias' => $this->moduleAlias]);
     }

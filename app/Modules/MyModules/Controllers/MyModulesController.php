@@ -1,14 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Modules\MyModules\Controllers;
 
 use App\Http\Controllers\Controller;
-use Modules\Modules\MyModules\Repositories\MyModuleRepository;
 use Illuminate\Http\Request;
-use Input;
-use View;
-use Response;
-use Redirect;
+use Modules\Modules\MyModules\Repositories\MyModuleRepository;
 
 class MyModulesController extends Controller
 {
@@ -19,6 +17,7 @@ class MyModulesController extends Controller
 
     /**
      * MyModulesController constructor.
+     *
      * @param MyModuleRepository $myModuleRepository
      */
     public function __construct(MyModuleRepository $myModuleRepository)
@@ -27,66 +26,69 @@ class MyModulesController extends Controller
     }
 
     /**
-     * GET /my-modules
+     * GET /my-modules.
      */
-    public function index()
+    public function index(): void
     {
         // TODO: Implement
     }
 
     /**
-     * GET /my-modules/create
+     * GET /my-modules/create.
      */
-    public function create()
+    public function create(): void
     {
         // TODO: Implement
     }
 
     /**
-     * POST /my-modules
+     * POST /my-modules.
+     *
      * @param Request $request
      */
-    public function store(Request $request)
+    public function store(Request $request): void
     {
         // TODO: Implement
     }
 
     /**
-     * GET /my-modules/{id}
+     * GET /my-modules/{id}.
+     *
      * @param $id
      */
-    public function show($id)
+    public function show($id): void
     {
         // TODO: Implement
     }
 
     /**
-     * GET /my-modules/{id}/edit
+     * GET /my-modules/{id}/edit.
+     *
      * @param $id
      */
-    public function edit($id)
+    public function edit($id): void
     {
         // TODO: Implement
     }
 
     /**
-     * PUT/PATCH /my-modules/{id}
-     * @param $id
+     * PUT/PATCH /my-modules/{id}.
+     *
+     * @param         $id
      * @param Request $request
      */
-    public function update($id, Request $request)
+    public function update($id, Request $request): void
     {
         // TODO: Implement
     }
 
     /**
-     * DELETE /my-modules/{id}
+     * DELETE /my-modules/{id}.
+     *
      * @param $id
      */
-    public function destroy($id)
+    public function destroy($id): void
     {
         // TODO: Implement
     }
-
 }
-

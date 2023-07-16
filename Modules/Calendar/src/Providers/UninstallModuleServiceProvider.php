@@ -1,4 +1,8 @@
-<?php namespace Modules\Calendar\Providers;
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Calendar\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,9 +17,9 @@ class UninstallModuleServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        app()->booted(function () {
+        app()->booted(function (): void {
             $this->booted();
         });
     }
@@ -25,22 +29,20 @@ class UninstallModuleServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-
     }
 
-    private function booted()
+    private function booted(): void
     {
         $this->dropSchema();
     }
 
-    private function dropSchema()
+    private function dropSchema(): void
     {
         //If you want to rollback your module migration
         // uncomment bellow statement
-         
-//        \Artisan::call('module:migrate:rollback', ['alias' => $this->moduleAlias]);
 
+        //        \Artisan::call('module:migrate:rollback', ['alias' => $this->moduleAlias]);
     }
 }

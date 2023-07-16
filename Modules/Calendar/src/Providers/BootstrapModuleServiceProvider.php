@@ -1,4 +1,8 @@
-<?php namespace Modules\Calendar\Providers;
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Calendar\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,9 +15,9 @@ class BootstrapModuleServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        app()->booted(function () {
+        app()->booted(function (): void {
             $this->booted();
         });
     }
@@ -23,14 +27,13 @@ class BootstrapModuleServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-
     }
 
-    private function booted()
+    private function booted(): void
     {
-        /**
+        /*
          * Register dynamic menu or what you want when
          * bootstrap your module
          */
