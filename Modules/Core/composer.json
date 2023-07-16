@@ -1,0 +1,21 @@
+{
+    "name": "joshbrw/core-module",
+    "type": "laravel-module",
+    "version": "0.0.1",
+
+    "description": "",
+    "extra": {
+        "module-dir": "Core"
+    },
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Core\\": ""
+        }
+    }
+}

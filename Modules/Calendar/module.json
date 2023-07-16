@@ -1,0 +1,8 @@
+{
+    "name": "Calendar",
+    "alias": "calendar",
+    "description": "",
+    "namespace": "App\\Modules\\Calendar",
+    "version": "0.1",
+    "autoload": "psr-4"
+}
